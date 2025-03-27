@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Datu Vizualizācijas</h1>
+    
+    <h2>Statistika</h2>
+    <p>Kopējais ierakstu skaits: {{ stats.total_count }}</p>
+    <p>Vidējā vērtība: {{ stats.avg_value|round(2) }}</p>
+    <p>Maksimālā vērtība: {{ stats.max_value }}</p>
+    
+    <h2>Kategoriju salīdzinājums</h2>
+    <img src="{{ bar_plot }}" alt="Bar Plot">
+    
+    <h2>Vērtību sadalījums (virs 50)</h2>
+    <img src="{{ histogram }}" alt="Histogram">
+    
+    <a href="{{ url_for('upload') }}">Ielādēt jaunus datus</a>
+</body>
+</html>
